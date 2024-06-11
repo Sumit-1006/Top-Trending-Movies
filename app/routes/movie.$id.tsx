@@ -1,5 +1,5 @@
 import { LoaderFunctionArgs, json } from "@remix-run/node";
-import { Link, useLoaderData } from "@remix-run/react";
+import { Link,Outlet, useLoaderData } from "@remix-run/react";
 
 export async function loader({params}:LoaderFunctionArgs){
     const url =await fetch(
@@ -58,6 +58,9 @@ export default function MovieId(){
                         </span>
                         {data.release_date}
                     </p>
+                    <div className="w-1/2">
+                        <Outlet />
+                    </div>
                 </div>
             </div>
         </div>
