@@ -45,10 +45,21 @@ export default function Index() {
                 <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt=""
                 className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
                 />
-
-                
                 </Link>
-                
+                <div className="flex flex-1 flex-col p-4 sm:p-6">
+                  <h2 className="mb-2 text-lg font-semibold text-gray-800">
+                    <Link
+                    to={`movie/${movie.id}/comments`}
+                    prefetch="intent"
+                    className="transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+                    >
+                      {movie.title}
+                    </Link>
+                  </h2>
+                  <p className="text-gray-500 line-clamp-3">
+                    {movie.overview}
+                  </p>
+                </div>
               </div>
 
             ))}
