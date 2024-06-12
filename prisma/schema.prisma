@@ -13,10 +13,12 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Comment{
+model Comment {
   id String @id @default(uuid())
+
   message String
-  movieID String
+  movieId String
+
   createdAt DateTime @default(now())
 }
 
