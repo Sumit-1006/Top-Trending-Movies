@@ -1,5 +1,5 @@
 import { LoaderFunctionArgs, json } from "@remix-run/node";
-import { Link,Outlet, useLoaderData } from "@remix-run/react";
+import { Link, Outlet, useLoaderData } from "@remix-run/react";
 
 export async function loader({params}:LoaderFunctionArgs){
     const url =await fetch(
@@ -22,7 +22,7 @@ export default function MovieId(){
         <div className="min-h-screen p-10">
             <img src={`https://image.tmdb.org/t/p/original/${data.backdrop_path}`} 
             alt="" 
-            className="h-[40vh] object-cover w-full rounded-lg"
+            className="h-[70vh] object-cover w-full rounded-lg"
             
             />
 
@@ -58,9 +58,9 @@ export default function MovieId(){
                         </span>
                         {data.release_date}
                     </p>
-                    <div className="w-1/2">
-                        <Outlet />
-                    </div>
+                </div>
+                <div className="w-1/2">
+                    <Outlet />
                 </div>
             </div>
         </div>
